@@ -10,6 +10,8 @@ django-admin
 gunicorn
 
 # mysql driver
+msql
+mysql
 mysqlclient
 
 # MYSQL Json Field provider
