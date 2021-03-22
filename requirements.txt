@@ -10,6 +10,8 @@ django-admin
 gunicorn
 
 # mysql driver
+pymysql
+MySQL-python
 mysql-connector-python
 msql
 mysql
