@@ -8,3 +8,9 @@ dj-database-url
 
 django-admin
 gunicorn
+
+# mysql driver
+mysqlclient==2.0.1
+
+# MYSQL Json Field provider
+django-mysql==3.8.1
