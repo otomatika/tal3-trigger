@@ -4,6 +4,7 @@ Django==3.1.7
 
 
 dj-database-url
-dj-conf-url
+# dj-conf-url
 
 django-admin
+gunicorn
