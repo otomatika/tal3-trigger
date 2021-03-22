@@ -10,7 +10,7 @@ django-admin
 gunicorn
 
 # mysql driver
-mysqlclient==2.0.1
+mysqlclient
 
 # MYSQL Json Field provider
-django-mysql==3.8.1
+# django-mysql
