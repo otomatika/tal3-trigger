@@ -15,7 +15,7 @@ pymysql
 mysql-connector-python
 msql
 mysql
-mysqlclient
+# mysqlclient
 
 # MYSQL Json Field provider
 # django-mysql
