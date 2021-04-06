@@ -23,11 +23,12 @@ def index(request):
     context = {
         "DBValue": int(tm.testField2),
         "FileValue": int(fileValue),
+        "FilePath": str(os.environ.get("TEXTFILE_URL", './DjangoTestWriteFile.txt'))
     }
     return render(request, 'index.html', context)
 
 def readFile():
-    filePath = os.environ.get("TEXTFILE_URL")
+    filePath = os.environ.get("TEXTFILE_URL", './DjangoTestWriteFile.txt')
     if os.path.exists(filePath):
         with open(filePath, 'r') as file:
             val = file.readline()
@@ -36,7 +37,7 @@ def readFile():
     return int(val)
 
 def writeFile(val):
-    filePath = os.environ.get("TEXTFILE_URL")
+    filePath = os.environ.get("TEXTFILE_URL", './DjangoTestWriteFile.txt')
     with open(filePath, 'w+') as file:
         file.write(str(val))
 
