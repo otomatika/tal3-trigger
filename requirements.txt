@@ -21,3 +21,6 @@ msql==1.2.2
 
 # MYSQL Json Field provider
 # django-mysql
+
+#whitenoise
+whitenoise==5.2.0
