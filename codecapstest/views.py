@@ -1,3 +1,5 @@
+import os
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -10,10 +12,33 @@ def index(request):
     if not tm:
         tm = testModel(testField='', testField2=0)
         tm.save()
+    fileValue = readFile()
     if request.method == 'POST':
-        tm.testField2 = tm.testField2 + 1
-        tm.save()
+        if 'file' in request.POST:
+            writeFile(fileValue + 1)
+            fileValue = readFile()
+        else:
+            tm.testField2 = tm.testField2 + 1
+            tm.save()
     context = {
-        "MyVar": int(tm.testField2),
+        "DBValue": int(tm.testField2),
+        "FileValue": int(fileValue),
     }
     return render(request, 'index.html', context)
+
+def readFile():
+    filePath = os.environ.get("TEXTFILE_URL")
+    if os.path.exists(filePath):
+        with open(filePath, 'r') as file:
+            val = file.readline()
+    else:
+        val = 0
+    return int(val)
+
+def writeFile(val):
+    filePath = os.environ.get("TEXTFILE_URL")
+    with open(filePath, 'w+') as file:
+        file.write(str(val))
+
+
+

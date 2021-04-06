@@ -20,15 +20,42 @@
       <header class="App-header">
           <div class="container" style="height:100%"}>
 		<div class="w-100 h-100 d-flex justify-content-center align-items-center">
-				<img src="{% static 'img/logo.png' %}" class="App-logo m-5" alt="logo" />
+                <div class="m-5" style="background: #103d2e; border-radius: 1rem;">
+                    <img src="{% static 'img/logo.png' %}" class="App-logo m-5" alt="logo" />
+                </div>
 			<div class="text-left" style="text-align:left">
 				<h1>Hello, world!</h1>
 				<h2 class="text-secondary">Congratulations. Django is running on CodeCaps!</h2>
+                <span class="text-light" style="font-size: 1.5rem; line-height: 0.7!important;">
+                    We've hooked this Django instance to look for a database on the environment variable:
+                    <code>DATABASE_URL</code>
+                    <br>
+                    <br>
+                    Once you've run <code>python3 manage.py migrate</code>, a value will
+                    be created/read/incremented below.
+                    <br>
+                    <br>
+                    We've also hooked it up to create and read/write a text file located at the
+                    directory provided in the environment variable:
+                    <code>TEXTFILE_URL</code>
+                </span>
                 <form method="post">
-                    <h3 class="">
-                        Value from database: {{ MyVar }}
-                    </h3>
-                    <input type="submit" class="btn btn-primary" value="Increase"/>
+                    <div class="list-group bg-dark text-light mt-3">
+                        <div class="list-group-item bg-dark d-flex w-100 justify-content-between">
+                            <div>Database</div>
+                            <span>
+                                <span class="mr-3">{{ DBValue }}</span>
+                                <input type="submit" class="btn btn-primary ml-4" name="DB" value="Increment"/>
+                            </span>
+                        </div>
+                        <div class="list-group-item bg-dark d-flex w-100 justify-content-between">
+                            <div>File</div>
+                            <span>
+                                <span class="mr-3">{{ FileValue }}</span>
+                                <input type="submit" class="btn btn-primary ml-4" name="file" value="Increment"/>
+                            </span>
+                        </div>
+                    </div>
                 </form>
 			</div>
 		</div>

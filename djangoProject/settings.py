@@ -93,6 +93,8 @@ else:
         }
     }
 
+
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -140,4 +142,7 @@ STATIC_URL = '/static/'
 
 # print(STATIC_ROOT)
 #
-# print(PROJECT_ROOT)
+print(PROJECT_ROOT)
+
+print(f'Using DATABASE_URL: {os.environ.get("DATABASE_URL", "Temporary SQLite DB")}')
+print(f'Using TEXTFILE_URL: {os.environ.get("TEXTFILE_URL", "None")}')

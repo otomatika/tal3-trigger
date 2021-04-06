@@ -28,3 +28,7 @@
 .App-link {
   color: #61dafb;
 }
+
+body {
+  line-height: 1;
+}
