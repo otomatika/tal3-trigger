@@ -24,3 +24,5 @@ msql==1.2.2
 
 #whitenoise
 whitenoise==5.2.0
+
+cryptography
